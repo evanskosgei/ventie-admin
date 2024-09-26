@@ -24,7 +24,7 @@ export default function SignInForm() {
       setUser(data.user);
       Success(data.message)
     } catch (error) {
-      const message = error.response?.data?.response ?? error.message;
+      const message = error.response?.data?.error ?? error.message;
       Error(message);
     }
   };
@@ -44,7 +44,7 @@ export default function SignInForm() {
               name="email"
               {...register("email")}
               autoComplete="current-username"
-              className="py-2 px-3 block w-full border-gray-200 rounded-sm text-sm focus:border-primary focus:ring-primary dark:bg-bgdark dark:border-white/10 dark:text-white/70"
+              className="py-2 px-3 block w-full border-gray-200 rounded-sm text-sm focus:border-primary focus:ring-primary dark dark:border-white/10 dark:text-white/70"
               required
             />
           </div>
@@ -54,12 +54,12 @@ export default function SignInForm() {
             <label htmlFor="password" className="block text-sm mb-2 dark:text-white">
               Password
             </label>
-            <Link
+            {/* <Link
               className="text-sm text-primary decoration-2 hover:underline font-medium"
               to={`${import.meta.env.BASE_URL}Authentication/forgetpassword/cover2`}
             >
               Forgot password?
-            </Link>
+            </Link> */}
           </div>
           <div className="relative">
             <input
@@ -68,27 +68,11 @@ export default function SignInForm() {
               name="password"
               {...register("password")}
               autoComplete="current-password"
-              className="py-2 px-3 block w-full border-gray-200 rounded-sm text-sm focus:border-primary focus:ring-primary dark:bg-bgdark dark:border-white/10 dark:text-white/70"
+              className="py-2 px-3 block w-full border-gray-200 rounded-sm text-sm focus:border-primary focus:ring-primary dark:border-white/10 dark:text-white/70"
               required
             />
           </div>
         </div>
-        {/* <div className="flex items-center">
-          <div className="flex">
-            <input
-              id="remember-me"
-              name="remember-me"
-              type="checkbox"
-              {...register("remember-me")}
-              className="shrink-0 mt-0.5 border-gray-200 rounded text-primary pointer-events-none focus:ring-primary dark:bg-bgdark dark:border-white/10 dark:checked:bg-primary dark:checked:border-primary dark:focus:ring-offset-white/10"
-            />
-          </div>
-          <div className="ltr:ml-3 rtl:mr-3">
-            <label htmlFor="remember-me" className="text-sm dark:text-white">
-              Remember me
-            </label>
-          </div>
-        </div> */}
         <button
           type="submit"
           disabled={isSubmitting}

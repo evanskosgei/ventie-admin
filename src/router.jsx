@@ -83,13 +83,13 @@ export default function Router() {
           </Route>
 
           {/* LandingPage  */}
-          <Route path={`${import.meta.env.BASE_URL}`} element={<Landingpagelayout />}>
+          {/* <Route path={`${import.meta.env.BASE_URL}`} element={<Landingpagelayout />}>
             <Route path={`${import.meta.env.BASE_URL}pagecomponent/landing`} element={<Landing />} />
-          </Route>
+          </Route> */}
 
           {/* Authentication */}
 
-          <Route path={`${import.meta.env.BASE_URL}`} element={<Authenticationlayout />}>
+          {/* <Route path={`${import.meta.env.BASE_URL}`} element={<Authenticationlayout />}>
             <Route path="*" element={<Error404 />} />
             <Route path={`${import.meta.env.BASE_URL}Authentication/commingsoon`} element={<Commingsoon />} />
             <Route
@@ -103,8 +103,8 @@ export default function Router() {
             <Route
               path={`${import.meta.env.BASE_URL}Authentication/createpassword/cover2`}
               element={<CreatePasswordCover2 />}
-            />
-            <Route path={`${import.meta.env.BASE_URL}Authentication/errorpage/error404`} element={<Error404 />} />
+            /> */}
+            {/* <Route path={`${import.meta.env.BASE_URL}Authentication/errorpage/error404`} element={<Error404 />} />
             <Route path={`${import.meta.env.BASE_URL}Authentication/errorpage/error500`} element={<Error500 />} />
             <Route
               path={`${import.meta.env.BASE_URL}Authentication/forgetpassword/basic`}
@@ -122,8 +122,8 @@ export default function Router() {
             <Route
               path={`${import.meta.env.BASE_URL}Authentication/lockscreen/cover1`}
               element={<LockScreenCover1 />}
-            />
-            <Route
+            /> */}
+            {/* <Route
               path={`${import.meta.env.BASE_URL}Authentication/lockscreen/cover2`}
               element={<LockScreenCover2 />}
             />
@@ -138,8 +138,8 @@ export default function Router() {
             <Route
               path={`${import.meta.env.BASE_URL}Authentication/resetpassword/cover2`}
               element={<ResetPasswordCover2 />}
-            />
-            <Route path={`${import.meta.env.BASE_URL}Authentication/signin/basic`} element={<SignInBasic />} />
+            /> */}
+            {/* <Route path={`${import.meta.env.BASE_URL}Authentication/signin/basic`} element={<SignInBasic />} />
             <Route path={`${import.meta.env.BASE_URL}Authentication/signin/cover1`} element={<SignInCover1 />} />
             <Route path={`${import.meta.env.BASE_URL}Authentication/signin/cover2`} element={<SignInCover2 />} />
             <Route path={`${import.meta.env.BASE_URL}Authentication/signup/basic`} element={<SignUpBasic />} />
@@ -148,21 +148,21 @@ export default function Router() {
             <Route
               path={`${import.meta.env.BASE_URL}Authentication/twostepverification/basic`}
               element={<VerificationBasic />}
-            />
-            <Route
+            /> */}
+            {/* <Route
               path={`${import.meta.env.BASE_URL}Authentication/twostepverification/cover1`}
               element={<VerificationCover1 />}
             />
             <Route
               path={`${import.meta.env.BASE_URL}Authentication/twostepverification/cover2`}
               element={<VerificationCover2 />}
-            />
-            <Route
+            /> */}
+            {/* <Route
               path={`${import.meta.env.BASE_URL}Authentication/underconstruction`}
               element={<Underconstruction />}
-            />
-            <Route path={`${import.meta.env.BASE_URL}Authentication/undermaintenance`} element={<Undermaintenance />} />
-          </Route>
+            /> */}
+            {/* <Route path={`${import.meta.env.BASE_URL}Authentication/undermaintenance`} element={<Undermaintenance />} />
+          </Route> */}
         </Fragment>
       ))}
     </Routes>
