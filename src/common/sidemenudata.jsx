@@ -60,7 +60,7 @@ export const MenuItems = [
 
 			{
 				id: 16, icon: ComponentsSvg, title: "Creators", type: "sub", active: false, selected: false, children: [
-
+					{ id: 17, path: `${import.meta.env.BASE_URL}users/creators/new-unapproved`, type: "link", active: false, selected: false, title: "New" },
 					{ id: 17, path: `${import.meta.env.BASE_URL}users/creators/active`, type: "link", active: false, selected: false, title: "Active" },
 					{ id: 18, path: `${import.meta.env.BASE_URL}users/creators/suspended`, type: "link", active: false, selected: false, title: "Suspended" },
 					{ id: 19, path: `${import.meta.env.BASE_URL}users/creators/sanctioned`, type: "link", active: false, selected: false, title: "Sanctioned" },
