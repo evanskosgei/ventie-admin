@@ -31,9 +31,11 @@ const AuthenticationSvg = <i className="ri-error-warning-line side-menu__icon"><
 
 
 export const MenuItems = [
-	{ id: 1, menutitle: "MAIN", Items: [
+	{
+		id: 1, menutitle: "MAIN", Items: [
 
-			{ id: 2,icon: Dashboardsvg, title: "Dashboards", type: "sub", active: false, selected: false, children: [
+			{
+				id: 2, icon: Dashboardsvg, title: "Dashboards", type: "sub", active: false, selected: false, children: [
 
 					// { id: 3, path: `${import.meta.env.BASE_URL}dashboards/sales`, type: "link", active: false, selected: false, title: "Sales" },
 					// { id: 4, path: `${import.meta.env.BASE_URL}dashboards/ecommerce`, type: "link", active: false, selected: false, title: "Ecommerce" },
@@ -53,13 +55,15 @@ export const MenuItems = [
 			{ id: 15, path: `${import.meta.env.BASE_URL}widgets`, icon: WidgetsSvg, title: "Reports", type: "link", active: false, selected: false },
 		]
 	},
-	{ menutitle: "Users", Items: [
+	{
+		menutitle: "Users", Items: [
 
-			{ id: 16, icon: ComponentsSvg, title: "Creators", type: "sub", active: false, selected: false, children: [
+			{
+				id: 16, icon: ComponentsSvg, title: "Creators", type: "sub", active: false, selected: false, children: [
 
-					{ id: 17, path: `${import.meta.env.BASE_URL}components/accordion`, type: "link", active: false, selected: false, title: "Active" },
-					{ id: 18, path: `${import.meta.env.BASE_URL}components/alerts`, type: "link", active: false, selected: false, title: "Suspended" },
-					{ id: 19, path: `${import.meta.env.BASE_URL}components/avatars`, type: "link", active: false, selected: false, title: "Sanctioned" },
+					{ id: 17, path: `${import.meta.env.BASE_URL}users/creators/active`, type: "link", active: false, selected: false, title: "Active" },
+					{ id: 18, path: `${import.meta.env.BASE_URL}users/creators/suspended`, type: "link", active: false, selected: false, title: "Suspended" },
+					{ id: 19, path: `${import.meta.env.BASE_URL}users/creators/sanctioned`, type: "link", active: false, selected: false, title: "Sanctioned" },
 					// { id: 20, path: `${import.meta.env.BASE_URL}components/badges`, type: "link", active: false, selected: false, title: "Badges" },
 					// { id: 21, path: `${import.meta.env.BASE_URL}components/blockquotes`, type: "link", active: false, selected: false, title: "Blockquotes" },
 					// { id: 22, path: `${import.meta.env.BASE_URL}components/buttons`, type: "link", active: false, selected: false, title: "Buttons" },
@@ -74,7 +78,8 @@ export const MenuItems = [
 					// { id: 31, path: `${import.meta.env.BASE_URL}components/toasts`, type: "link", active: false, selected: false, title: "Toast" }
 				]
 			},
-			{ id: 32, icon: ElementsSvg, title: "Customers", type: "sub", active: false, selected: false, children: [
+			{
+				id: 32, icon: ElementsSvg, title: "Customers", type: "sub", active: false, selected: false, children: [
 
 					{ id: 33, path: `${import.meta.env.BASE_URL}users/customers/active`, type: "link", active: false, selected: false, title: "Active" },
 					{ id: 34, path: `${import.meta.env.BASE_URL}users/customers/suspended`, type: "link", active: false, selected: false, title: "Suspended" },
@@ -86,7 +91,8 @@ export const MenuItems = [
 					// { id: 40, path: `${import.meta.env.BASE_URL}elements/columns`, type: "link", active: false, selected: false, title: "Columns" }
 				]
 			},
-			{ id: 41, icon: FormsSvg, title: "Admins", type: "sub", active: false, selected: false, children: [
+			{
+				id: 41, icon: FormsSvg, title: "Admins", type: "sub", active: false, selected: false, children: [
 					{ id: 42, path: `${import.meta.env.BASE_URL}users/admin/active`, type: "link", active: false, selected: false, title: "Active" },
 					{ id: 43, path: `${import.meta.env.BASE_URL}users/admin/deactivated`, type: "link", active: false, selected: false, title: "Deactivated" },
 					{ id: 44, path: `${import.meta.env.BASE_URL}users/admin/deleted`, type: "link", active: false, selected: false, title: "Deleted" },
@@ -138,29 +144,36 @@ export const MenuItems = [
 			// },
 		]
 	},
-	{ menutitle: "EVENTS", Items: [
-		{ id: 78, icon: IconsSvg,  path: `${import.meta.env.BASE_URL}maps/`, type: "link", active: false, selected: false, title: "Current" },
-		{ id: 79, icon: MapsSvg,  path: `${import.meta.env.BASE_URL}maps/leafletmap`, type: "link", active: false, selected: false, title: "Upcomming" },
-		{ id: 80, icon: AuthenticationSvg,  path: `${import.meta.env.BASE_URL}home/leafletmap`, type: "link", active: false, selected: false, title: "Cancelled" },
+	{
+		menutitle: "EVENTS", Items: [
+			{ id: 78, icon: IconsSvg, path: `${import.meta.env.BASE_URL}events/current`, type: "link", active: false, selected: false, title: "Current" },
+			// { id: 79, icon: MapsSvg,  path: `${import.meta.env.BASE_URL}maps/leafletmap`, type: "link", active: false, selected: false, title: "Upcomming" },
+			{ id: 79, icon: PagesSvg, path: `${import.meta.env.BASE_URL}events/closed`, type: "link", active: false, selected: false, title: "Closed" },
+			{ id: 80, icon: AuthenticationSvg, path: `${import.meta.env.BASE_URL}events/cancelled`, type: "link", active: false, selected: false, title: "Cancelled" },
 		]
 	},
-	{ menutitle: "FINANCE", Items: [
-			{ id: 86, icon: PagesSvg, title: "Pages", type: "sub", active: false, selected: false, children: [
-					{ id: 87, title: "Profile", type: "sub", active: false, selected: false, children: [
+	{
+		menutitle: "FINANCE", Items: [
+			{
+				id: 86, icon: PagesSvg, title: "Pages", type: "sub", active: false, selected: false, children: [
+					{
+						id: 87, title: "Profile", type: "sub", active: false, selected: false, children: [
 
 							{ id: 88, path: `${import.meta.env.BASE_URL}pagecomponent/profile/home`, type: "link", active: false, selected: false, title: "Home" },
 							{ id: 89, path: `${import.meta.env.BASE_URL}pagecomponent/profile/profilesetting`, type: "link", active: false, selected: false, title: "Profile Settings" },
 
 						]
 					},
-					{ id: 90, title: "Invoice", type: "sub", active: false, selected: false, children: [
+					{
+						id: 90, title: "Invoice", type: "sub", active: false, selected: false, children: [
 
 							{ id: 91, path: `${import.meta.env.BASE_URL}pagecomponent/invoice/invoicelist`, type: "link", active: false, selected: false, title: "Invoice List" },
 							{ id: 92, path: `${import.meta.env.BASE_URL}pagecomponent/invoice/invoicedetails`, type: "link", active: false, selected: false, title: "Invoice Details" },
 
 						]
 					},
-					{ id: 93, title: "Blog", type: "sub", active: false, selected: false, children: [
+					{
+						id: 93, title: "Blog", type: "sub", active: false, selected: false, children: [
 
 							{ id: 94, path: `${import.meta.env.BASE_URL}pagecomponent/blog/blogmain`, type: "link", active: false, selected: false, title: "Blog" },
 							{ id: 95, path: `${import.meta.env.BASE_URL}pagecomponent/blog/blogdetails`, type: "link", active: false, selected: false, title: "Blog Detail" },
@@ -168,7 +181,8 @@ export const MenuItems = [
 
 						]
 					},
-					{ id: 97, title: "Mail", type: "sub", active: false, selected: false, children: [
+					{
+						id: 97, title: "Mail", type: "sub", active: false, selected: false, children: [
 
 							{ id: 98, path: `${import.meta.env.BASE_URL}pagecomponent/mail/mainMail`, type: "link", active: false, selected: false, title: "Mail" },
 							{ id: 99, path: `${import.meta.env.BASE_URL}pagecomponent/mail/chat`, type: "link", active: false, selected: false, title: "Chat" },
@@ -176,7 +190,8 @@ export const MenuItems = [
 
 						]
 					},
-					{ id: 101, title: "E-Commerce", type: "sub", active: false, selected: false, children: [
+					{
+						id: 101, title: "E-Commerce", type: "sub", active: false, selected: false, children: [
 
 							{ id: 102, path: `${import.meta.env.BASE_URL}pagecomponent/Ecommerce/product`, type: "link", active: false, selected: false, title: "Products" },
 							{ id: 103, path: `${import.meta.env.BASE_URL}pagecomponent/Ecommerce/productlist`, type: "link", active: false, selected: false, title: "Product list" },
@@ -206,57 +221,66 @@ export const MenuItems = [
 					{ id: 124, path: `${import.meta.env.BASE_URL}pagecomponent/emptypages`, title: "EmptyPage", type: "link", active: false, selected: false },
 				]
 			},
-			{ id: 125, icon: IconsSvg, title: "Icons", type: "sub", active: false, selected: false, children: [
+			{
+				id: 125, icon: IconsSvg, title: "Icons", type: "sub", active: false, selected: false, children: [
 
 					{ id: 126, path: `${import.meta.env.BASE_URL}icon/tablericons`, type: "link", active: false, selected: false, title: "Tabler Icons" },
 					{ id: 127, path: `${import.meta.env.BASE_URL}icon/remixicons`, type: "link", active: false, selected: false, title: "Remix Icons" },
 				]
 			},
-			{ id: 128, icon: AuthenticationSvg, title: "Authentication", type: "sub", active: false, selected: false, children: [
+			{
+				id: 128, icon: AuthenticationSvg, title: "Authentication", type: "sub", active: false, selected: false, children: [
 
-					{ id: 129, type: "sub", active: false, selected: false, title: "Sign In", children: [
+					{
+						id: 129, type: "sub", active: false, selected: false, title: "Sign In", children: [
 
 							{ id: 130, path: `${import.meta.env.BASE_URL}Authentication/signin/basic`, type: "link", active: false, selected: false, title: "Basic" },
 							{ id: 131, path: `${import.meta.env.BASE_URL}Authentication/signin/cover1`, type: "link", active: false, selected: false, title: "Cover-1" },
 							{ id: 132, path: `${import.meta.env.BASE_URL}Authentication/signin/cover2`, type: "link", active: false, selected: false, title: "Cover-2" },
 						]
 					},
-					{ id: 133, type: "sub", active: false, selected: false, title: "Sign Up", children: [
+					{
+						id: 133, type: "sub", active: false, selected: false, title: "Sign Up", children: [
 
 							{ id: 134, path: `${import.meta.env.BASE_URL}Authentication/signup/basic`, type: "link", active: false, selected: false, title: "Basic" },
 							{ id: 135, path: `${import.meta.env.BASE_URL}Authentication/signup/cover1`, type: "link", active: false, selected: false, title: "Cover-1" },
 							{ id: 136, path: `${import.meta.env.BASE_URL}Authentication/signup/cover2`, type: "link", active: false, selected: false, title: "Cover-2" },
 						]
 					},
-					{ id: 137, type: "sub", active: false, selected: false, title: "Create Password", children: [
+					{
+						id: 137, type: "sub", active: false, selected: false, title: "Create Password", children: [
 
 							{ id: 138, path: `${import.meta.env.BASE_URL}Authentication/createpassword/basic`, type: "link", active: false, selected: false, title: "Basic" },
 							{ id: 139, path: `${import.meta.env.BASE_URL}Authentication/createpassword/cover1`, type: "link", active: false, selected: false, title: "Cover-1" },
 							{ id: 140, path: `${import.meta.env.BASE_URL}Authentication/createpassword/cover2`, type: "link", active: false, selected: false, title: "Cover-2" },
 						]
 					},
-					{ id: 141, type: "sub", active: false, selected: false, title: "Forget Password", children: [
+					{
+						id: 141, type: "sub", active: false, selected: false, title: "Forget Password", children: [
 
 							{ id: 142, path: `${import.meta.env.BASE_URL}Authentication/forgetpassword/basic`, type: "link", active: false, selected: false, title: "Basic" },
 							{ id: 143, path: `${import.meta.env.BASE_URL}Authentication/forgetpassword/cover1`, type: "link", active: false, selected: false, title: "Cover-1" },
 							{ id: 144, path: `${import.meta.env.BASE_URL}Authentication/forgetpassword/cover2`, type: "link", active: false, selected: false, title: "Cover-2" },
 						]
 					},
-					{ id: 145, type: "sub", active: false, selected: false, title: "Reset Password", children: [
+					{
+						id: 145, type: "sub", active: false, selected: false, title: "Reset Password", children: [
 
 							{ id: 146, path: `${import.meta.env.BASE_URL}Authentication/resetpassword/basic`, type: "link", active: false, selected: false, title: "Basic" },
 							{ id: 147, path: `${import.meta.env.BASE_URL}Authentication/resetpassword/cover1`, type: "link", active: false, selected: false, title: "Cover-1" },
 							{ id: 148, path: `${import.meta.env.BASE_URL}Authentication/resetpassword/cover2`, type: "link", active: false, selected: false, title: "Cover-2" },
 						]
 					},
-					{ id: 149, type: "sub", active: false, selected: false, title: "Lock Screen", children: [
+					{
+						id: 149, type: "sub", active: false, selected: false, title: "Lock Screen", children: [
 
 							{ id: 150, path: `${import.meta.env.BASE_URL}Authentication/lockscreen/basic`, type: "link", active: false, selected: false, title: "Basic" },
 							{ id: 151, path: `${import.meta.env.BASE_URL}Authentication/lockscreen/cover1`, type: "link", active: false, selected: false, title: "Cover-1" },
 							{ id: 152, path: `${import.meta.env.BASE_URL}Authentication/lockscreen/cover2`, type: "link", active: false, selected: false, title: "Cover-2" },
 						]
 					},
-					{ id: 153, type: "sub", active: false, selected: false, title: "Two-step-verification", children: [
+					{
+						id: 153, type: "sub", active: false, selected: false, title: "Two-step-verification", children: [
 
 							{ id: 154, path: `${import.meta.env.BASE_URL}Authentication/twostepverification/basic`, type: "link", active: false, selected: false, title: "Basic" },
 							{ id: 155, path: `${import.meta.env.BASE_URL}Authentication/twostepverification/cover1`, type: "link", active: false, selected: false, title: "Cover-1" },
@@ -267,7 +291,8 @@ export const MenuItems = [
 					{ id: 158, path: `${import.meta.env.BASE_URL}Authentication/underconstruction`, type: "link", active: false, selected: false, title: "Under Construction" },
 					{ id: 159, path: `${import.meta.env.BASE_URL}Authentication/commingsoon`, type: "link", active: false, selected: false, title: "Coming Soon" },
 
-					{ id: 160, type: "sub", active: false, selected: false, title: "Error Pages", children: [
+					{
+						id: 160, type: "sub", active: false, selected: false, title: "Error Pages", children: [
 
 							{ id: 161, path: `${import.meta.env.BASE_URL}Authentication/errorpage/error404`, type: "link", active: false, selected: false, title: "404 Error" },
 							{ id: 162, path: `${import.meta.env.BASE_URL}Authentication/errorpage/error500`, type: "link", active: false, selected: false, title: "500 Error" },

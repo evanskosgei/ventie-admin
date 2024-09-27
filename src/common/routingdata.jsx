@@ -97,14 +97,20 @@ import Widgets from "../component/widgets/widgets";
 import Remixicons from "../component/icon/remixicons/remixicons";
 import Tablericons from "../component/icon/tablericons/tablericons";
 
-// current files
+// current files for users
 import Active_admins from "../views/users/Admins/active_admins";
 import Deactivated_admins from "../views/users/Admins/deactivated_admins";
 import Deleted_admins from "../views/users/Admins/deleted_admins";
-
 import Active_customers from "../views/users/customers/active_customers";
 import Suspended_customers from "../views/users/customers/suspended_customers";
 import Sanctioned_customers from "../views/users/customers/sanctioned_customers";
+import Active_creators from "../views/users/creators/active_creators";
+import Suspended_creators from "../views/users/creators/suspended_creators";
+import Sanctioned_creators from "../views/users/creators/sanctioned_creators";
+// current files for events
+import Cancelled_events from "../views/events/cancelled_events";
+import Closed_events from "../views/events/closed_events";
+import Current_events from "../views/events/current_events";
 
 
 //component path END
@@ -130,14 +136,20 @@ export const RouteData = [
 
     { path: `${import.meta.env.BASE_URL}widgets`, element: <Widgets /> , title: ''},
 
-    // current components
+    // current users components
     { path: `${import.meta.env.BASE_URL}users/admin/active`, element: <Active_admins /> , title: ''},
     { path: `${import.meta.env.BASE_URL}users/admin/deactivated`, element: <Deactivated_admins /> , title: ''},
     { path: `${import.meta.env.BASE_URL}users/admin/deleted`, element: <Deleted_admins /> , title: ''},
-
     { path: `${import.meta.env.BASE_URL}users/customers/active`, element: <Active_customers /> , title: ''},
     { path: `${import.meta.env.BASE_URL}users/customers/suspended`, element: <Suspended_customers /> , title: ''},
     { path: `${import.meta.env.BASE_URL}users/customers/sanctioned`, element: <Sanctioned_customers /> , title: ''},
+    { path: `${import.meta.env.BASE_URL}users/creators/active`, element: <Active_creators /> , title: ''},
+    { path: `${import.meta.env.BASE_URL}users/creators/suspended`, element: <Suspended_creators /> , title: ''},
+    { path: `${import.meta.env.BASE_URL}users/creators/sanctioned`, element: <Sanctioned_creators /> , title: ''},
+    // current events components
+    { path: `${import.meta.env.BASE_URL}events/cancelled`, element: <Cancelled_events /> , title: ''},
+    { path: `${import.meta.env.BASE_URL}events/closed`, element: <Closed_events /> , title: ''},
+    { path: `${import.meta.env.BASE_URL}events/current`, element: <Current_events /> , title: ''},
 
     // {/* Component content */}
 
