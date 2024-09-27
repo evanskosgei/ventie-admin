@@ -6,7 +6,7 @@ import ALLImages from "../../../common/imagesdata";
 const Jobs = () => {
 	return (
 		<div>
-			<PageHeader currentpage="Job Dashboard" activepage="Home" mainpage="Job Dashboard"/>
+			<PageHeader currentpage="Dashboard" activepage="Home" mainpage="Dashboard"/>
 
 			<div className="grid grid-cols-12 gap-x-6">
 				<div className="col-span-12 xxxl:col-span-9">
@@ -292,7 +292,7 @@ const Jobs = () => {
 							</div>
 						</div>
 					</div>
-					<div className="box bg-gradient-to-r from-primary to-secondary">
+					{/* <div className="box bg-gradient-to-r from-primary to-secondary">
 						<div className="box-body">
 							<div className="flex ">
 								<div>
@@ -302,7 +302,7 @@ const Jobs = () => {
 								<button type="button" className="ti-btn ti-btn-light my-auto ltr:ml-auto rtl:mr-auto">Upgrade</button>
 							</div>
 						</div>
-					</div>
+					</div> */}
 				</div>
 				<div className="col-span-12">
 					<div className="box">

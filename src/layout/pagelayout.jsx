@@ -9,20 +9,21 @@ import { Provider } from "react-redux";
 
 const Pagelayout = () => {
 	useEffect(() => {
-		import("preline"); }, []);
+		import("preline");
+	}, []);
 
 	return (
 		<Fragment>
 			<Provider store={store}>
-			<Switcher/>
-			<div className="page">
-				<Sidebar/>
-				<Header/>
-				<div className="content relative">
-				<Outlet />
+				<Switcher />
+				<div className="page">
+					<Sidebar />
+					<Header />
+					<div className="content relative">
+						<Outlet />
+					</div>
+					<Footer />
 				</div>
-				<Footer/>
-			</div>
 			</Provider>
 		</Fragment>
 	);
