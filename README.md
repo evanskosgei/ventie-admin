@@ -1,3 +1,2 @@
-# synto-theme-installed
-# run yarn to install
-# yarn run dev# mta_frontend
+# run NPM INSTALL to install
+# NPM RUN DEV# Ventie_Admin_frontend
