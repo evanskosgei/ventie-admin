@@ -12,92 +12,37 @@ const SignInCover2 = () => {
           <div className="hidden lg:relative lg:block lg:p-12">
             <a className="block text-white" href="#">
               <span className="sr-only">Home</span>
-              
             </a>
-
             <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
               Welcome to Ventie
             </h2>
-
             <p className="mt-4 leading-relaxed text-white/90">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam dolorum aliquam,
               quibusdam aperiam voluptatum.
             </p>
           </div>
         </section>
-
         <main
           className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
           <div className="max-w-xl lg:max-w-4xl">
-                <div className="p-4 sm:p-7">
-                  <div className="text-center">
-                    <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">Sign in</h1>
-                    <p className="mt-3 text-sm text-gray-600 dark:text-white/70"> 
-                    Sign In to Ventie Admin Portal by Entering your Email and Password
-                    </p>
-                    {/* <p className="mt-3 text-sm text-gray-600 dark:text-white/70">
-                      Don't have an account yet?
-                      <Link
-                        className="text-primary decoration-2 hover:underline font-medium"
-                        to={`${import.meta.env.BASE_URL}Authentication/signup/cover2`}
-                      >
-                        {" "}
-                        Sign up here
-                      </Link>
-                    </p> */}
-                  </div>
-                  <div className="mt-5">
-                    <div className="py-3 flex items-center text-xs text-gray-400 uppercase before:flex-[1_1_0%] before:border-t before:border-gray-200 ltr:before:mr-6 rtl:before:ml-6 after:flex-[1_1_0%] after:border-t after:border-gray-200 ltr:after:ml-6 rtl:after:mr-6 dark:text-white/70 dark:before:border-white/10 dark:after:border-white/10">
-                      Or
-                    </div>
-                    <SignInForm />
-                  </div>
+            <div className="p-4 sm:p-7">
+              <div className="text-center">
+                <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">Sign in</h1>
+                <p className="mt-3 text-sm text-gray-600 dark:text-white/70">
+                  Sign In to Ventie Admin Portal by Entering your Email and Password
+                </p>
+              </div>
+              <div className="mt-5">
+                <div className="py-3 flex items-center text-xs text-gray-400 uppercase before:flex-[1_1_0%] before:border-t before:border-gray-200 ltr:before:mr-6 rtl:before:ml-6 after:flex-[1_1_0%] after:border-t after:border-gray-200 ltr:after:ml-6 rtl:after:mr-6 dark:text-white/70 dark:before:border-white/10 dark:after:border-white/10">
+                  Or
                 </div>
-              {/* </div> */}
-            {/* </form> */}
+                <SignInForm />
+              </div>
+            </div>
           </div>
         </main>
       </div>
     </div>
-
-    // <Fragment>
-    //   <div className=" hidden lg:block">
-    //   </div>
-    //   <div className="lg:col-span-6 col-span-12">
-    //     <div className="authentication-page w-full">
-    //       <main id="content" className="w-full max-w-lg mx-auto p-6">
-    //         <Link to={`${import.meta.env.BASE_URL}dashboards/sales/`} className="header-logo lg:hidden">
-    //           <img src={ALLImages("logo")} alt="logo" className="mx-auto block dark:hidden" />
-    //           <img src={ALLImages("dark")} alt="logo" className="mx-auto hidden dark:block" />
-    //         </Link>
-
-    //         <div className="mt-7">
-    //           <div className="p-4 sm:p-7">
-    //             <div className="text-center">
-    //               <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">Sign in</h1>
-    //               <p className="mt-3 text-sm text-gray-600 dark:text-white/70">
-    //                 Don't have an account yet?
-    //                 <Link
-    //                   className="text-primary decoration-2 hover:underline font-medium"
-    //                   to={`${import.meta.env.BASE_URL}Authentication/signup/cover2`}
-    //                 >
-    //                   {" "}
-    //                   Sign up here
-    //                 </Link>
-    //               </p>
-    //             </div>
-    //             <div className="mt-5">
-    //               <div className="py-3 flex items-center text-xs text-gray-400 uppercase before:flex-[1_1_0%] before:border-t before:border-gray-200 ltr:before:mr-6 rtl:before:ml-6 after:flex-[1_1_0%] after:border-t after:border-gray-200 ltr:after:ml-6 rtl:after:mr-6 dark:text-white/70 dark:before:border-white/10 dark:after:border-white/10">
-    //                 Or
-    //               </div>
-    //               <SignInForm />
-    //             </div>
-    //           </div>
-    //         </div>
-    //       </main>
-    //     </div>
-    //   </div>
-    // </Fragment>
   );
 };
 
