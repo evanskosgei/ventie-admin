@@ -238,7 +238,7 @@ const Header = ({ local_varaiable, ThemeChanger }) => {
     };
   }, []);
 
-  // console.log({ user });
+  console.log({ user });
 
   return (
     <Fragment>
@@ -470,7 +470,7 @@ const Header = ({ local_varaiable, ThemeChanger }) => {
                         </div>
                         <div>
                           <p className="ti-dropdown-header-title !text-white">
-                            {user.firstName} {user.lastName}
+                            {user.username} {user.lastName}
                           </p>
                           <p className="ti-dropdown-header-content !text-white/50">{user.currency}</p>
                         </div>

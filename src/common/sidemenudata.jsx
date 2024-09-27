@@ -50,7 +50,7 @@ export const MenuItems = [
 				],
 			},
 
-			{ id: 15, path: `${import.meta.env.BASE_URL}widgets`, icon: WidgetsSvg, title: "Widgets", type: "link", active: false, selected: false },
+			{ id: 15, path: `${import.meta.env.BASE_URL}widgets`, icon: WidgetsSvg, title: "Reports", type: "link", active: false, selected: false },
 		]
 	},
 	{ menutitle: "Users", Items: [
@@ -76,9 +76,9 @@ export const MenuItems = [
 			},
 			{ id: 32, icon: ElementsSvg, title: "Customers", type: "sub", active: false, selected: false, children: [
 
-					{ id: 33, path: `${import.meta.env.BASE_URL}elements/navbar`, type: "link", active: false, selected: false, title: "Active" },
-					{ id: 34, path: `${import.meta.env.BASE_URL}elements/megaMenu`, type: "link", active: false, selected: false, title: "Suspended" },
-					{ id: 35, path: `${import.meta.env.BASE_URL}elements/nav&tabs`, type: "link", active: false, selected: false, title: "Sanctioned" },
+					{ id: 33, path: `${import.meta.env.BASE_URL}users/customers/active`, type: "link", active: false, selected: false, title: "Active" },
+					{ id: 34, path: `${import.meta.env.BASE_URL}users/customers/suspended`, type: "link", active: false, selected: false, title: "Suspended" },
+					{ id: 35, path: `${import.meta.env.BASE_URL}users/customers/sanctioned`, type: "link", active: false, selected: false, title: "Sanctioned" },
 					// { id: 36, path: `${import.meta.env.BASE_URL}elements/scrollspy`, type: "link", active: false, selected: false, title: "Scrollspy" },
 					// { id: 37, path: `${import.meta.env.BASE_URL}elements/breadcrumbs`, type: "link", active: false, selected: false, title: "BreadCrumb" },
 					// { id: 38, path: `${import.meta.env.BASE_URL}elements/paginations`, type: "link", active: false, selected: false, title: "Pagination" },
@@ -87,9 +87,9 @@ export const MenuItems = [
 				]
 			},
 			{ id: 41, icon: FormsSvg, title: "Admins", type: "sub", active: false, selected: false, children: [
-					{ id: 42, path: `${import.meta.env.BASE_URL}forms/formelements`, type: "link", active: false, selected: false, title: "Active" },
-					{ id: 43, path: `${import.meta.env.BASE_URL}forms/advancedforms`, type: "link", active: false, selected: false, title: "Deactivated" },
-					{ id: 44, path: `${import.meta.env.BASE_URL}forms/forminputgroup`, type: "link", active: false, selected: false, title: "Deleted" },
+					{ id: 42, path: `${import.meta.env.BASE_URL}users/admin/active`, type: "link", active: false, selected: false, title: "Active" },
+					{ id: 43, path: `${import.meta.env.BASE_URL}users/admin/deactivated`, type: "link", active: false, selected: false, title: "Deactivated" },
+					{ id: 44, path: `${import.meta.env.BASE_URL}users/admin/deleted`, type: "link", active: false, selected: false, title: "Deleted" },
 					// { id: 44, path: `${import.meta.env.BASE_URL}forms/fileuploads`, type: "link", active: false, selected: false, title: "File Uploads" },
 					// { id: 45, path: `${import.meta.env.BASE_URL}forms/formcheckbox`, type: "link", active: false, selected: false, title: "Form-Checkbox" },
 					// { id: 46, path: `${import.meta.env.BASE_URL}forms/formradio`, type: "link", active: false, selected: false, title: "Form-Radio" },
