@@ -10,6 +10,7 @@ const instance = axios.create({ baseURL })
 
 instance.interceptors.request.use((config) => {
   const token = getToken();
+  // console.log(token)
   config.headers.Authorization = `Bearer ${token}`;
   // config.headers.["X-permissions"]
   return config;

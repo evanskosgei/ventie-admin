@@ -7,21 +7,17 @@ import { setToken } from "../../../utils/helpers";
 import { Success, Error } from "../../../components/toasts";
 
 export default function SignInForm() {
-  const {
-    handleSubmit,
-    register,
-    formState: { isSubmitting },
-  } = useForm();
+  const {handleSubmit,register,formState: { isSubmitting },} = useForm();
   const { setUser } = useAuth();
 
-  const [alert, setAlert] = useState(null);
+  // const [alert, setAlert] = useState(null);
 
   const onSubmit = async (values) => {
     try {
       const { data } = await mtaApi.auth.login(values);
-      if (data.status !== 200) throw new Error(data.description);
-      setToken(data.token);
-      setUser(data.user);
+      if (data.status != 200) throw new Error(data.message);
+      setToken(data.Admin.token)
+      setUser(data.Admin)
       Success(data.message)
     } catch (error) {
       const message = error.response?.data?.error ?? error.message;
@@ -32,7 +28,7 @@ export default function SignInForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="grid gap-y-4">
-        {alert && <Alert alert={alert} />}
+        {/* {alert && <Alert alert={alert} />} */}
         <div>
           <label htmlFor="username" className="block text-sm mb-2 dark:text-white">
             Email address
@@ -61,7 +57,7 @@ export default function SignInForm() {
               id="password"
               name="password"
               {...register("password")}
-              autoComplete="current-password"
+              autoComplete="password"
               className="py-2 px-3 block w-full border-gray-200 rounded-sm text-sm focus:border-primary focus:ring-primary dark:border-white/10 dark:text-white/70"
               required
             />

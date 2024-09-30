@@ -52,7 +52,7 @@ import { Fragment } from "react";
 import { useAuth } from "./providers/AuthProvider";
 export default function Router() {
   const { user } = useAuth();
-  console.log(user);
+  // console.log(user);
   return (
     <Routes>
       {/* <Route path={`${import.meta.env.BASE_URL}`} element={<Firebaselayout />}>
@@ -81,6 +81,7 @@ export default function Router() {
             {/* Profile */}
             <Route path={`${import.meta.env.BASE_URL}pagecomponent/profile/home`} element={<Home />} />
           </Route>
+          <Route path="*" element={<Error404 />} />
 
           {/* LandingPage  */}
           {/* <Route path={`${import.meta.env.BASE_URL}`} element={<Landingpagelayout />}>

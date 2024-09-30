@@ -1,41 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import PageHeader from "../../../layout/layoutsection/pageHeader/pageHeader";
 import { ProductList } from "../../../common/ecommercedata";
+import mtaApi from "../../../api/mtaApi";
 
 const Active_creators = () => {
-    const [allData, setAllData] = useState(ProductList)
+    const [allData, setAllData] = useState([])
+    const [creatorCount, setCreatorCount] = useState(0);
+
+    const fetch_active_creators = async () => {
+        try {
+            const { data } = await mtaApi.creators.fetch_creators({ info_type: 2 });
+            if (data.status === '200') {
+                setAllData(data.unverified_creator);
+                setCreatorCount(data.unverified_creator);
+            } else {
+                throw new Error(data.message || 'Failed to fetch creators');
+            }
+        } catch (error) {
+            console.error("Error fetching creators:", error);
+        }
+    };
+
+    useEffect(() => {
+        fetch_active_creators();
+    }, []);
     function handleRemove(id) {
         const newList = allData.filter((idx) => idx.id !== id);
         setAllData(newList);
     }
 
-    const [isChecked, setIsChecked] = useState(true);
 
-    const handleCheckAll = () => {
-        const mailListElements = document.querySelectorAll('.mail-list');
-        const mailCheckboxInputs = document.querySelectorAll('.mail-checkbox input');
 
-        if (isChecked) {
-            mailListElements.forEach((element) => {
-                element.classList.add('selected');
-            });
-
-            mailCheckboxInputs.forEach((input) => {
-                input.checked = true;
-            });
-        } else {
-            mailListElements.forEach((element) => {
-                element.classList.remove('selected');
-            });
-
-            mailCheckboxInputs.forEach((input) => {
-                input.checked = false;
-            });
-        }
-
-        setIsChecked(!isChecked);
-    };
     return (
         <div>
             <PageHeader currentpage="Active Creators" activepage="Creators" mainpage="Active Creators" />
@@ -48,44 +44,60 @@ const Active_creators = () => {
                         <table className="ti-custom-table ti-custom-table-head edit-table">
                             <thead className="bg-gray-100 dark:bg-black/20">
                                 <tr className="">
-                                    <th scope="col" className="dark:text-white/70">Creators No.</th>
+                                    <th scope="col" className="dark:text-white/70">Creators ID No.</th>
+                                    <th scope="col" className="dark:text-white/70">Creators Image</th>
                                     <th scope="col" className="dark:text-white/70">Creators Name</th>
-                                    <th scope="col" className="dark:text-white/70">Creators Email</th>
-                                    <th scope="col" className="dark:text-white/70">Creators Phone Number</th>
-                                    <th scope="col" className="dark:text-white/70">Creators</th>
+                                    <th scope="col" className="dark:text-white/70">Creators Address No.</th>
+                                    <th scope="col" className="dark:text-white/70">ID Front</th>
+                                    <th scope="col" className="dark:text-white/70">ID Back</th>
                                     <th scope="col" className="dark:text-white/70">Status</th>
-                                    <th scope="col" className="dark:text-white/70">Date Created</th>
                                     <th scope="col" className="!text-end dark:text-white/70">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {allData.map((idx) => (
                                     <tr className="product-list" key={Math.random()}>
-                                        <td className="font-semibold">{idx.PdctID}</td>
+                                        <td className="font-semibold">{idx.idNumber}</td>
                                         <td>
                                             <div className="flex space-x-3 rtl:space-x-reverse">
                                                 <img className="avatar avatar-sm rounded-sm bg-gray-100 dark:bg-black/20 p-1"
-                                                    src={idx.pdctsrc} alt="Image Description" />
+                                                    src={idx.profileImage} alt="Image Description" />
                                                 <span
                                                     className="block text-sm font-semibold text-gray-800 dark:text-white my-auto truncate lg:max-w-[100px]">
-                                                    Shirts For Men</span>
+                                                    Profile</span>
                                             </div>
                                         </td>
-                                        <td>{idx.category}</td>
-                                        <td>{idx.price}</td>
-                                        <td>{idx.stock}</td>
+                                        <td>{idx.fullName}</td>
+                                        <td>{idx.address}</td>
+                                        <td>
+                                            <div className="flex space-x-3 rtl:space-x-reverse">
+                                                <img className="avatar avatar-sm rounded-sm bg-gray-100 dark:bg-black/20 p-1"
+                                                    src={idx.idFrontImage} alt="Image Description" />
+                                                <span
+                                                    className="block text-sm font-semibold text-gray-800 dark:text-white my-auto truncate lg:max-w-[100px]">
+                                                    Front</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div className="flex space-x-3 rtl:space-x-reverse">
+                                                <img className="avatar avatar-sm rounded-sm bg-gray-100 dark:bg-black/20 p-1"
+                                                    src={idx.idBackImage} alt="Image Description" />
+                                                <span
+                                                    className="block text-sm font-semibold text-gray-800 dark:text-white my-auto truncate lg:max-w-[100px]">
+                                                    Back</span>
+                                            </div>
+                                        </td>
                                         <td>{idx.status}</td>
-                                        <td>{idx.date}</td>
                                         <td className="text-end font-medium">
-                                            <Link aria-label="anchor" to={`${import.meta.env.BASE_URL}pagecomponent/Ecommerce/productdetails/`} className="w-8 h-8 ti-btn rounded-full p-0 transition-none focus:outline-none ti-btn-soft-warning">
+                                            <Link aria-label="anchor" to={`${import.meta.env.BASE_URL}users/creators/new/details/${idx._id}`} className="w-8 h-8 ti-btn rounded-full p-0 transition-none focus:outline-none ti-btn-soft-warning">
                                                 <i className="ti ti-eye"></i>
                                             </Link>
-                                            <Link aria-label="anchor" to={`${import.meta.env.BASE_URL}pagecomponent/Ecommerce/editproduct/`} className="w-8 h-8 ti-btn rounded-full p-0 transition-none focus:outline-none ti-btn-soft-secondary">
+                                            {/* <Link aria-label="anchor" to={`${import.meta.env.BASE_URL}pagecomponent/Ecommerce/editproduct/`} className="w-8 h-8 ti-btn rounded-full p-0 transition-none focus:outline-none ti-btn-soft-secondary">
                                                 <i className="ti ti-pencil"></i>
                                             </Link>
                                             <Link aria-label="anchor" to="#" className="product-btn w-8 h-8 ti-btn rounded-full p-0 transition-none focus:outline-none ti-btn-soft-danger" onClick={() => handleRemove(idx.id)}>
                                                 <i className="ti ti-trash"></i>
-                                            </Link>
+                                            </Link> */}
                                         </td>
                                     </tr>
                                 ))}

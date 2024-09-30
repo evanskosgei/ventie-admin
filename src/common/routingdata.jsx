@@ -108,6 +108,7 @@ import Active_creators from "../views/users/creators/active_creators";
 import Suspended_creators from "../views/users/creators/suspended_creators";
 import Sanctioned_creators from "../views/users/creators/sanctioned_creators";
 import New_unapproved_creators from "../views/users/creators/new_unapproved_creators";
+import Verify_creator from "../views/users/creators/verify_creator";
 // current files for events
 import Cancelled_events from "../views/events/cancelled_events";
 import Closed_events from "../views/events/closed_events";
@@ -148,6 +149,7 @@ export const RouteData = [
     { path: `${import.meta.env.BASE_URL}users/creators/suspended`, element: <Suspended_creators /> , title: ''},
     { path: `${import.meta.env.BASE_URL}users/creators/sanctioned`, element: <Sanctioned_creators /> , title: ''},
     { path: `${import.meta.env.BASE_URL}users/creators/new-unapproved`, element: <New_unapproved_creators /> , title: ''},
+    { path: `${import.meta.env.BASE_URL}users/creators/new/details/:id`, element: <Verify_creator /> , title: ''},
     // current events components
     { path: `${import.meta.env.BASE_URL}events/cancelled`, element: <Cancelled_events /> , title: ''},
     { path: `${import.meta.env.BASE_URL}events/closed`, element: <Closed_events /> , title: ''},

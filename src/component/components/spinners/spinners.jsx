@@ -12,11 +12,7 @@ const Spinners = () => {
 						<div className="box-header">
 							<h5 className="box-title">Basic Spinner</h5>
 						</div>
-						<div className="box-body">
-							<div className="ti-spinner text-primary" role="status" aria-label="loading">
-								<span className="sr-only">Loading...</span>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 				<div className="col-span-12 lg:col-span-3">
