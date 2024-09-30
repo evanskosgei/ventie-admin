@@ -11,6 +11,10 @@ const mtaApi = {
     fetch_creator_by_id:(id)=>Post("admin/get-creator", id),
     verify:(data)=>Post('admin/verify-creator', data),
   },
+  admins:{
+    fetch_admins:()=>Post('admin/get-admins')
+
+  },
 };
 
 export default mtaApi;

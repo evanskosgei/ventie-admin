@@ -1,41 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import PageHeader from '../../../layout/layoutsection/pageHeader/pageHeader';
 import { ProductList } from "../../../common/ecommercedata";
+import mtaApi from "../../../api/mtaApi";
 
 const Active_admins = () => {
     const [allData, setAllData] = useState(ProductList)
-    function handleRemove(id) {
-        const newList = allData.filter((idx) => idx.id !== id);
-        setAllData(newList);
+
+    const fetch_active_admins = async()=>{
+        const {data} = await mtaApi.admins.fetch_admins()
+        console.log(data)
     }
 
-    const [isChecked, setIsChecked] = useState(true);
+    useEffect(()=>{
+        fetch_active_admins()
+    },[])
 
-    const handleCheckAll = () => {
-        const mailListElements = document.querySelectorAll('.mail-list');
-        const mailCheckboxInputs = document.querySelectorAll('.mail-checkbox input');
 
-        if (isChecked) {
-            mailListElements.forEach((element) => {
-                element.classList.add('selected');
-            });
 
-            mailCheckboxInputs.forEach((input) => {
-                input.checked = true;
-            });
-        } else {
-            mailListElements.forEach((element) => {
-                element.classList.remove('selected');
-            });
-
-            mailCheckboxInputs.forEach((input) => {
-                input.checked = false;
-            });
-        }
-
-        setIsChecked(!isChecked);
-    };
+    
     return (
         <div>
             <PageHeader currentpage="Active Admins" activepage="Admins" mainpage="Active Admins" />
@@ -84,7 +67,7 @@ const Active_admins = () => {
                                             <Link aria-label="anchor" to={`${import.meta.env.BASE_URL}pagecomponent/Ecommerce/editproduct/`} className="w-8 h-8 ti-btn rounded-full p-0 transition-none focus:outline-none ti-btn-soft-secondary">
                                                 <i className="ti ti-pencil"></i>
                                             </Link>
-                                            <Link aria-label="anchor" to="#" className="product-btn w-8 h-8 ti-btn rounded-full p-0 transition-none focus:outline-none ti-btn-soft-danger" onClick={() => handleRemove(idx.id)}>
+                                            <Link aria-label="anchor" to="#" className="product-btn w-8 h-8 ti-btn rounded-full p-0 transition-none focus:outline-none ti-btn-soft-danger" >
                                                 <i className="ti ti-trash"></i>
                                             </Link>
                                         </td>

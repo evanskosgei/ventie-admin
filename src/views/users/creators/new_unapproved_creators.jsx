@@ -21,8 +21,8 @@ const New_unapproved_creators = () => {
                 throw new Error(data.message || 'Failed to fetch unverified creators');
             }
         } catch (error) {
-            console.error("Error fetching unverified creators:", error);
-            setError(error.message || 'An unexpected error occurred');
+            // console.error("Error fetching unverified creators:", error);
+            setError(error.response.data.message || 'An unexpected error occurred');
         } finally {
             setIsLoading(false);
         }
@@ -56,7 +56,6 @@ const New_unapproved_creators = () => {
             </div>
         );
     }
-
     return (
         <div>
             <PageHeader currentpage="New Creators" activepage="Creators" mainpage="New Creators" />
