@@ -158,7 +158,7 @@ const Verify_creator = () => {
                                         {!cancel ? (
                                             <div className="box-footer space-x-4 rtl:space-x-reverse">
                                                 <Link onClick={() => verify_creator(userData._id)} className="ti-btn m-0 ti-btn-soft-primary">
-                                                    <i className="ri ri-refresh-line"></i> Update
+                                                    <i className="ri ri-refresh-line"></i> Approve
                                                 </Link>
                                                 <Link onClick={() => setCancel(true)} className="ti-btn m-0 ti-btn-soft-danger">
                                                     <i className="ri ri-chat-delete-line"></i> Reject
@@ -223,9 +223,8 @@ const Verify_creator = () => {
                                     </svg>
                                     <div>
                                         <span className="block text-sm font-semibold dark:text-white max-w-[200px] truncate">Secured
-                                            Payments</span>
-                                        <span className="block text-xs text-gray-600 dark:text-white/70">Make Payments easily and
-                                            securily</span>
+                                            Data</span>
+                                        <span className="block text-xs text-gray-600 dark:text-white/70">We take priority in data security</span>
                                     </div>
                                 </div>
                             </div>
@@ -256,7 +255,7 @@ const Verify_creator = () => {
                                     </svg>
                                     <div>
                                         <span className="block text-sm font-semibold dark:text-white max-w-[200px] truncate">High Quality
-                                            Products</span>
+                                            Image Is expected</span>
                                         <span className="block text-xs text-gray-600 dark:text-white/70">Product is Made with Atmost
                                             Care</span>
                                     </div>

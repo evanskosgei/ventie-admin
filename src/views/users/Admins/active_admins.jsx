@@ -17,8 +17,6 @@ const Active_admins = () => {
     },[])
 
 
-
-    
     return (
         <div>
             <PageHeader currentpage="Active Admins" activepage="Admins" mainpage="Active Admins" />
