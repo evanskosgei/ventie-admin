@@ -11,15 +11,17 @@ import { ToastContainer } from 'react-toastify';
 const helmetContext = {};
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  // <Fragment>
-    <HelmetProvider context={helmetContext}>
-      <BrowserRouter>
-        <ScrollToTop />
-        <AuthProvider>
-          <Router />
-          <ToastContainer />
-        </AuthProvider>
-      </BrowserRouter>
-    </HelmetProvider>
-  // </Fragment>
+  <React.StrictMode>
+    <Fragment>
+      <HelmetProvider context={helmetContext}>
+        <BrowserRouter>
+          <ScrollToTop />
+          <AuthProvider>
+            <Router />
+            <ToastContainer />
+          </AuthProvider>
+        </BrowserRouter>
+      </HelmetProvider>
+    </Fragment>
+  </React.StrictMode>
 );
