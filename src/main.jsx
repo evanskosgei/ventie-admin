@@ -11,7 +11,7 @@ import { ToastContainer } from 'react-toastify';
 const helmetContext = {};
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <Fragment>
+  // <Fragment>
     <HelmetProvider context={helmetContext}>
       <BrowserRouter>
         <ScrollToTop />
@@ -21,5 +21,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </AuthProvider>
       </BrowserRouter>
     </HelmetProvider>
-  </Fragment>
+  // </Fragment>
 );
