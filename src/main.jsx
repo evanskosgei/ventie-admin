@@ -17,7 +17,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <ScrollToTop />
         <AuthProvider>
           <Router />
-          <ToastContainer/>
+          <ToastContainer />
         </AuthProvider>
       </BrowserRouter>
     </HelmetProvider>
