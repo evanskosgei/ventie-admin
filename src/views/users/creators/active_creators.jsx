@@ -16,7 +16,7 @@ const Active_creators = () => {
         try {
             const { data } = await mtaApi.creators.fetch_creators({ info_type: 1 });
             if (data.status === '200') {
-                setAllData(data.unverified_creator);
+                setAllData(data.creator);
                 setCreatorCount(data.unverified_creator_count);
             } else {
                 throw new Error(data.message || 'Failed to fetch unverified creators');
@@ -115,15 +115,12 @@ const Active_creators = () => {
                                             </td>
                                             <td>{idx.status}</td>
                                             <td className="text-end font-medium">
-                                                <Link aria-label="anchor" to={`${import.meta.env.BASE_URL}users/creators/new/details/${idx._id}`} className="w-8 h-8 ti-btn rounded-full p-0 transition-none focus:outline-none ti-btn-soft-warning">
-                                                    <i className="ti ti-eye"></i>
+                                                <Link aria-label="anchor" to={`${import.meta.env.BASE_URL}pagecomponent/Ecommerce/editproduct/`} className="w-8 h-8 ti-btn rounded-full p-0 transition-none focus:outline-none ti-btn-soft-warning">
+                                                    <i className="ri ri-close-circle-line"></i>
                                                 </Link>
-                                                {/* <Link aria-label="anchor" to={`${import.meta.env.BASE_URL}pagecomponent/Ecommerce/editproduct/`} className="w-8 h-8 ti-btn rounded-full p-0 transition-none focus:outline-none ti-btn-soft-secondary">
-                                                <i className="ti ti-pencil"></i>
-                                            </Link>
-                                            <Link aria-label="anchor" to="#" className="product-btn w-8 h-8 ti-btn rounded-full p-0 transition-none focus:outline-none ti-btn-soft-danger" onClick={() => handleRemove(idx.id)}>
-                                                <i className="ti ti-trash"></i>
-                                            </Link> */}
+                                                <Link aria-label="anchor" to="#" className="product-btn w-8 h-8 ti-btn rounded-full p-0 transition-none focus:outline-none ti-btn-soft-danger" onClick={() => handleRemove(idx.id)}>
+                                                    <i className="ti ti-trash"></i>
+                                                </Link>
                                             </td>
                                         </tr>
                                     ))}

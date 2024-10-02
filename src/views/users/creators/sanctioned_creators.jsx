@@ -16,7 +16,7 @@ const Sanctioned_creators = () => {
         try {
             const { data } = await mtaApi.creators.fetch_creators({ info_type: 4 });
             if (data.status === '200') {
-                setAllData(data.unverified_creator);
+                setAllData(data.creator);
                 setCreatorCount(data.unverified_creator_count);
             } else {
                 throw new Error(data.message || 'Failed to fetch unverified creators');

@@ -10,9 +10,11 @@ const mtaApi = {
     fetch_creators: (data) => Post('admin/get-creators', data),
     fetch_creator_by_id:(id)=>Post("admin/get-creator", id),
     verify:(data)=>Post('admin/verify-creator', data),
+    sanction_creator:(data) => Post('admin/sanction', data),
   },
   admins:{
-    fetch_admins:()=>Post('admin/get-admins')
+    fetch_admins:()=>Post('admin/get-admins'),
+   
 
   },
 };
