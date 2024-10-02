@@ -11,7 +11,6 @@ import { ToastContainer } from 'react-toastify';
 const helmetContext = {};
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
     <Fragment>
       <HelmetProvider context={helmetContext}>
         <BrowserRouter>
@@ -23,5 +22,4 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </BrowserRouter>
       </HelmetProvider>
     </Fragment>
-  </React.StrictMode>
 );
